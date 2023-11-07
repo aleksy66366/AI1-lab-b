@@ -3,34 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Lista ToDo</title>
-    <style>
-        .highlight {
-            background-color: yellow;
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
+<div id="box">
     <h1>Lista zadań do zrobienia</h1>
 
     <!-- Pole wyszukiwania -->
     <input type="text" id="search" placeholder="Szukaj...">
     
     <!-- Lista zadań -->
-    <ul id="task-list">
-       
-    </ul>
+    <div id="task-list">
+        <div class="task" id="task_1">
+            <div class="task-name" id="task-name_1">Homework</div>
+            <div class="task-date" id="task-date_1">11/05/2001</div>
+        </div>
+
+        <div class="task" id="task_2">
+            <div class="task-name" id="task-name_2">Job</div>
+            <div class="task-date" id="task-date_2">07/20/2024</div>
+        </div>
+
+        <div class="task" id="task_3">
+            <div class="task-name" id="task-name_3">Interview</div>
+            <div class="task-date" id="task-date_3">03/11/2020</div>
+        </div>
+    </div>
     
     <!-- Pole dodawania nowych zadań -->
     <input type="text" id="new-task" placeholder="Dodaj nowe zadanie...">
     
+    <!-- Pole dodawania daty -->
+    <input type="date" id="new-task-data">
+
     <!-- Przycisk dodawania zadania -->
     <button id="add-task">Dodaj</button>
 
     <!-- Przycisk usuwania zadania -->
     <button id="delete-task">Usuń</button>
 
+    <!-- Przycisk usuwania wszystkich zadań -->
+    <button id="delete-all-task">Wyczyść</button>
+
+</div>
     <script src="app.js"></script>
 </body>
 </html>
