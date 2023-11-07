@@ -1,0 +1,86 @@
+body {
+    background-image: linear-gradient(red, yellow);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#box {
+    margin: 10% auto;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#search {
+    width: 95%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#task-list {
+    margin-top: 20px;
+}
+
+.task {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-name {
+    flex: 1;
+    font-weight: bold;
+}
+
+.task-date {
+    flex: 1;
+    text-align: right;
+    color: #666;
+}
+
+#new-task-data, #add-task, #delete-task, #delete-all-task {
+    width: 25%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+#new-task{
+    width: 66%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+
+#add-task, #delete-task, #delete-all-task {
+    cursor: pointer;
+    background-color: #ff5722;
+    color: white;
+    font-weight: bold;
+    width: 32%;
+    margin: auto;
+    text-align: center;
+}
+
+#add-task:hover, #delete-task:hover, #delete-all-task:hover {
+    background-color: #d84315;
+}
+
+.highlight {
+    background-color: #d84215b7;
+    font-weight: bold;
+}
