@@ -55,10 +55,41 @@ class Todo {
         this.selectedTaskIndex=ter;
     }
 
-    addTask(task,data) {
-        this.tasks.push(task);
-        this.data.push(data);
-        this.draw();
+    addTask(task, data) {
+        const trimmedTask = task.trim();
+        const trimmedData = data.trim();
+
+        if (trimmedTask !== '') {
+            if (trimmedTask.length >= 3 && trimmedTask.length <= 255) {
+                const currentDate = new Date();
+                const inputDate = new Date(trimmedData);
+
+                if (inputDate.getFullYear() > currentDate.getFullYear()) {
+                    this.tasks.push(trimmedTask);
+                    this.data.push(trimmedData);
+                    this.draw();
+                } 
+                else if(inputDate.getFullYear() == currentDate.getFullYear()){
+                    if(inputDate.getMonth() > currentDate.getMonth()){
+                        this.tasks.push(trimmedTask);
+                        this.data.push(trimmedData);
+                        this.draw();
+                    }
+                    else if(inputDate.getMonth() == currentDate.getMonth()){
+                        if(inputDate.getDate() >= currentDate.getDate()){
+                            this.tasks.push(trimmedTask);
+                            this.data.push(trimmedData);
+                            this.draw();
+                        }
+                        else alert('Date must be later than today.');
+                    }
+                    else alert('Date must be later than today.'); 
+                }
+                else alert('Date must be later than today.');
+            } else {
+                alert('Task length must be between 3 and 255 characters.');
+            }
+        }
     }
 
     deleteTask(index) {
@@ -68,9 +99,40 @@ class Todo {
     }
 
     editTask(index, newTask, newData) {
-        this.tasks[index] = newTask;
-        this.data[index] = newData;
-        this.draw();
+        const trimmedTask = newTask.trim();
+        const trimmedData = newData.trim();
+
+        if (trimmedTask !== '') {
+            if (trimmedTask.length >= 3 && trimmedTask.length <= 255) {
+                const currentDate = new Date();
+                const inputDate = new Date(trimmedData);
+
+                if (inputDate.getFullYear() > currentDate.getFullYear()) {
+                    this.tasks[index] = trimmedTask;
+                    this.data[index] = trimmedData;
+                    this.draw();
+                } 
+                else if(inputDate.getFullYear() == currentDate.getFullYear()){
+                    if(inputDate.getMonth() > currentDate.getMonth()){
+                        this.tasks[index] = trimmedTask;
+                        this.data[index] = trimmedData;
+                        this.draw();
+                    }
+                    else if(inputDate.getMonth() == currentDate.getMonth()){
+                        if(inputDate.getDate() >= currentDate.getDate()){
+                            this.tasks[index] = trimmedTask;
+                            this.data[index] = trimmedData;
+                            this.draw();
+                        }
+                        else alert('Date must be later than today.');
+                    }
+                    else alert('Date must be later than today.'); 
+                }
+                else alert('Date must be later than today.');
+            } else {
+                alert('Task length must be between 3 and 255 characters.');
+            }
+        }
     }
 
     setSearchTerm(term) {
